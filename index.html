@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warriors of Cancer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #ffe9d6, #ffd1b3);
+        }
+
+        .hero {
+            background-image: url('https://source.unsplash.com/1600x900/?health,cancer');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        .cloud {
+            position: absolute;
+            background: radial-gradient(circle, #ffffff 60%, rgba(255, 255, 255, 0) 90%);
+            border-radius: 50%;
+            filter: blur(30px);
+            animation: float 15s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="bg-white shadow-md py-4 px-8 flex justify-between items-center fixed w-full top-0 z-50">
+        <div class="font-bold text-lg text-gray-800">KANKER PARU-PARU</div>
+        <nav class="flex space-x-6">
+            <a href="#" class="text-gray-700 hover:text-gray-900 transition" id="anggota-link"><i class="fa fa-info-circle"></i> Anggota</a>
+            <a href="#" class="text-gray-700 hover:text-gray-900 transition" id="tujuan-link"><i class="fa fa-briefcase"></i> Tujuan</a>
+            <a href="#" class="text-gray-700 hover:text-gray-900 transition" id="penjelasan-link"><i class="fa fa-paperclip"></i> Penjelasan</a>
+            <a href="#" class="text-gray-700 hover:text-gray-900 transition" id="contact-link"><i class="fa fa-phone"></i> Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero h-screen flex items-center justify-center text-center">
+        <div class="hero-content">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">WARRIORS OF CANCER</h1>
+            <p class="text-lg md:text-xl text-gray-200 font-light mb-6">Stronger lungs, brighter tomorrow</p>
+            <button id="startNow" class="bg-orange-500 text-white px-6 py-3 rounded-lg text-lg hover:bg-orange-600 transition">Start Now</button>
+        </div>
+    </section>
+
+    <!-- Image Section -->
+    <section id="image-section" class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <img src="foto ber.jpeg" alt="Group Photo" class="rounded-lg shadow-lg">
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="anggota-section" class="bg-gray-50 py-16 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-orange-500 mb-8">AWALAN</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <img src="anggota.png" alt="Anggota Image" class="rounded-lg shadow-md">
+                <img src="stronger lungs.png" alt="Stronger Image" class="rounded-lg shadow-md">
+                <img src="Tujuan.png" id="Tujuan-image" alt="Tujuan Image" class="rounded-lg shadow-md">
+            </div>
+        </div>
+    </section>
+
+    <!-- Materi Section -->
+    <section id="penjelasan-section" class="py-16 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-orange-500 mb-8">MATERI</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <img src="Tentang.png" id="tentang-image" alt="Tentang Image" class="rounded-lg shadow-md">
+                <img src="Pengobatan.png" alt="Pengobatan Image" class="rounded-lg shadow-md">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact-section" class="bg-gray-50 py-16 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-orange-500 mb-8">PENUTUPAN</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <img src="Pengobatan.png" alt="Pengobatan Image" class="rounded-lg shadow-md">
+                <img src="Sosmed.png" id="sosmed-image" alt="Sosmed Image" class="rounded-lg shadow-md">
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Clouds -->
+    <div class="cloud small top-10 left-20"></div>
+    <div class="cloud medium top-15 right-25"></div>
+    <div class="cloud large bottom-20 left-15"></div>
+    <div class="cloud medium bottom-10 right-20"></div>
+    <div class="cloud small top-5 left-50"></div>
+
+    <script>
+        document.getElementById('startNow').addEventListener('click', function () {
+            document.getElementById('image-section').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('anggota-link').addEventListener('click', function () {
+            document.getElementById('anggota-section').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('tujuan-link').addEventListener('click', function () {
+            document.getElementById('tujuan-image').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('penjelasan-link').addEventListener('click', function () {
+            document.getElementById('tentang-image').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('contact-link').addEventListener('click', function () {
+            document.getElementById('sosmed-image').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+        <!-- Footer -->
+        <footer class="bg-orange-500 text-white py-6 mt-16">
+            <div class="max-w-6xl mx-auto text-center">
+                <!-- Copyright -->
+                <p class="text-lg font-semibold">&copy; 2025 Warriors of Cancer. All rights reserved.</p>
+                
+                <!-- Quick Navigation -->
+                
+                <!-- Social Media Icons -->
+                <div class="mt-6 space-x-4">
+                    <a href="#" target="_blank" class="text-white hover:text-gray-300 transition">
+                        <i class="fab fa- fa-lg"></i>
+                    </a>
+                    <a href="#" target="_blank" class="text-white hover:text-gray-300 transition">
+                        <i class="fab fa-tiktok fa-lg"></i>
+                    </a>
+                    <a href="#" target="_blank" class="text-white hover:text-gray-300 transition">
+                        <i class="fab fa-instagram fa-lg"></i>
+                    </a>
+                    <a href="#" target="_blank" class="text-white hover:text-gray-300 transition">
+                        <i class="fab fa- fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    
+</body>
+</html>
